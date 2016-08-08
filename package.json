@@ -4,7 +4,9 @@
   "description": "Kickstarter for an Express app using Handlebars for templating",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/app.js"
+    "start": "nodemon src/app.js",
+    "inspector": "node-inspector",
+    "debug": "nodemon --debug src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
+    "node-inspector": "^0.12.8",
     "nodemon": "^1.10.0"
   }
 }
