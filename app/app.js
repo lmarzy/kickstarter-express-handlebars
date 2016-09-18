@@ -33,9 +33,28 @@ app.use('/', require('./routes'));
 
 app.use(express.static(__dirname + '/public'));
 
+// 404 ERROR HANDLER
+// ======================================================================
+
+app.use(function(req, res, next) {
+  const err = new Error('File Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// ERROR HANDLER (define as the last app.use callback)
+// ======================================================================
+
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message
+  });
+});
+
 // START THE SERVER
 // ======================================================================
 
 app.listen(port, function() {
-  console.log('App running');
+  console.log(`App running on port ${port}`);
 });
