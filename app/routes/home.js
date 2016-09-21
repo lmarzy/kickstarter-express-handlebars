@@ -1,7 +1,10 @@
 'use strict';
 
+const testData = require('../models/test');
+
 const pageData = {
-  title: 'Home page'
+  title: 'Home page',
+  testData
 };
 
 module.exports = router => {

@@ -16,12 +16,12 @@ app.set('view engine', 'hbs');
 
 // Configure the view engine
 app.engine('hbs', hbs({
-  layoutsDir: path.join(__dirname, '/views/layouts'),
-  defaultLayout: path.join(__dirname, '/views/layouts/layout.hbs')
+  layoutsDir: path.join(__dirname, './views/layouts'),
+  defaultLayout: path.join(__dirname, './views/layouts/layout.hbs')
 }));
 
 // Configure the views path
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', path.join(__dirname, './views'));
 
 // ROUTES
 // ======================================================================
@@ -33,24 +33,26 @@ app.use('/', require('./routes'));
 
 app.use(express.static(__dirname + '/public'));
 
-// 404 ERROR HANDLER
+// 404 ERROR HANDLING
 // ======================================================================
 
-app.use(function(req, res, next) {
-  const err = new Error('File Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// ERROR HANDLER (define as the last app.use callback)
-// ======================================================================
-
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message
+module.exports = (app) => {
+  app.use((req, res, next) => {
+    const err = new Error('File Not Found');
+    err.status = 404;
+    next(err);
   });
-});
+}
+
+// ERROR HANDLING
+// ======================================================================
+
+module.exports = (app) => {
+  app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.render('error', { message: err.message });
+  });
+}
 
 // START THE SERVER
 // ======================================================================
