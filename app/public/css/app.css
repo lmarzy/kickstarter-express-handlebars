@@ -60,11 +60,9 @@ body {
     .c-btn .c-btn-disabled:focus {
       opacity: 0.4; }
 
-.vr {
-  font-size: 1.375rem;
-  line-height: 1.0909; }
-
-.focus {
-  background: blue; }
-  .focus:hover, .focus:focus {
-    background: orange; }
+.fontsize {
+  font-size: 1.25rem;
+  line-height: 1.2000; }
+  .fontsize:hover, .fontsize:focus {
+    font-size: 2.5rem;
+    line-height: 1.2000; }

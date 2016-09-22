@@ -15,3 +15,11 @@
 
 //page specific components
 @import "../../components/buttons/buttons";
+
+.fontsize {
+  font-size: 20px;
+
+    &:hover {
+      font-size: 40px;
+    }
+}
