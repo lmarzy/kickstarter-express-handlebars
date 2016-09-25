@@ -59,10 +59,3 @@ body {
     .c-btn button[disabled]:focus,
     .c-btn .c-btn-disabled:focus {
       opacity: 0.4; }
-
-.fontsize {
-  font-size: 1.25rem;
-  line-height: 1.2000; }
-  .fontsize:hover, .fontsize:focus {
-    font-size: 2.5rem;
-    line-height: 1.2000; }

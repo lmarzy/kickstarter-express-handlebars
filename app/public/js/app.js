@@ -44,11 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	import component from './js/component';
+	'use strict';
+
 	__webpack_require__(1);
-
-	document.body.appendChild(component());
-
 
 /***/ },
 /* 1 */

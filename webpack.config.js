@@ -22,9 +22,16 @@ module.exports = {
   },
 
   module: {
+    preLoaders: [
+      {
+        test: /\.js?$/,
+        loaders: ['eslint'],
+        include: PATHS.assets
+      }
+    ],
     loaders: [
       {
-        test: /`.js$`/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel',
         query: {

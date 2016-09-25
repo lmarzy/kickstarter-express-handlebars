@@ -6,17 +6,14 @@
   "scripts": {
     "clean": "rm -rf app/public/*",
     "test": "tape -r babel-register tests/*.js | tap-spec",
+    "eslint:app": "eslint app/**/*.js",
     "start": "nodemon app/app.js",
     "inspector": "node-inspector",
     "debug": "nodemon --debug app/app.js",
-    "scss": "node-sass assets/css/*.scss -o app/public/css",
-    "autoprefixer": "postcss -u autoprefixer -r app/public/css/*",
-    "vr": "postcss -u postcss-vr -r app/public/css/*",
-    "pxtorem": "postcss -u postcss-pxtorem -r app/public/css/*",
-    "focus": "postcss -u postcss-focus -r app/public/css/*",
-    "build:css": "npm run scss && npm run vr && npm run pxtorem && npm run focus",
-    "js": "webpack",
-    "lint:js": "eslint app/**/*.js"
+    "webpackDev": "webpack --progress --colors --watch",
+    "webpackProd": "webpack -p",
+    "webpack:dev": "npm run clean && npm run webpackDev --progress --colors --watch",
+    "webpack:prod": "npm run clean && npm run webpackProd -p"
   },
   "repository": {
     "type": "git",
@@ -34,11 +31,6 @@
     "node-inspector": "^0.12.8",
     "nodemon": "^1.10.0"
   },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "babel-core": "^6.14.0",
@@ -48,6 +40,7 @@
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.7.5",
     "eslint": "^3.5.0",
+    "eslint-loader": "^1.5.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "postcss-cli": "^2.6.0",
     "postcss-focus": "^1.0.0",
