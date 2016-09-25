@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "clean": "rm -rf app/public/*",
-    "test": "tape -r babel-register tests/test.js",
+    "test": "tape -r babel-register tests/*.js | tap-spec",
     "start": "nodemon app/app.js",
     "inspector": "node-inspector",
     "debug": "nodemon --debug app/app.js",
@@ -16,7 +16,7 @@
     "focus": "postcss -u postcss-focus -r app/public/css/*",
     "build:css": "npm run scss && npm run vr && npm run pxtorem && npm run focus",
     "js": "webpack",
-    "lint:js": "eslint assets/js"
+    "lint:js": "eslint app/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -54,6 +54,7 @@
     "postcss-loader": "^0.13.0",
     "postcss-pxtorem": "^3.3.1",
     "postcss-vr": "^3.0.1",
+    "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
     "webpack": "^1.13.2"
   }
