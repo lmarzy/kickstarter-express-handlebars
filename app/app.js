@@ -16,8 +16,10 @@ app.set('view engine', 'hbs');
 
 // Configure the view engine
 app.engine('hbs', hbs({
-  layoutsDir: path.join(__dirname, './views/layouts'),
-  defaultLayout: path.join(__dirname, './views/layouts/layout.hbs')
+  extname: '.hbs',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  defaultLayout: path.join(__dirname, 'views/layouts/main'),
+  partialsDir: path.join(__dirname, '../components'),
 }));
 
 // Configure the views path
