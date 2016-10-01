@@ -1,7 +1,0 @@
-// B-TOOLS/MIXINS - No js
-
-@mixin no-js {
-  .no-js & {
-    @content;
-  }
-}

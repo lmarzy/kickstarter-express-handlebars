@@ -7,7 +7,7 @@ const path              = require('path'),
       pxtorem           = require('postcss-pxtorem');
 
 const PATHS = {
-  assets: path.join(__dirname, 'assets'),
+  assets: path.join(__dirname, 'public/assets'),
   build: path.join(__dirname, 'app/public')
 };
 

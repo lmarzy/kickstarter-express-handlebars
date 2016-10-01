@@ -7,7 +7,7 @@
     "clean": "rm -rf app/public/*",
     "test": "tape -r babel-register tests/*.js | tap-spec",
     "eslint:app": "eslint app/**/*.js",
-    "start": "nodemon app/app.js",
+    "start": "nodemon main",
     "inspector": "node-inspector",
     "debug": "nodemon --debug app/app.js",
     "webpackDev": "webpack --progress --colors --watch",

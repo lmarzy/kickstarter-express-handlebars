@@ -1,6 +1,0 @@
-<header class="c-siteHeader">
-
-  {% include "logo.nunjucks" %}
-
-</header>
-<!-- !END header.c-siteHeader -->

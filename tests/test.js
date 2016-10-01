@@ -1,6 +1,6 @@
 import test from 'tape';
 
-test( 'awesome test', function ( t ) {
+test( 'awesome test', (t) => {
   t.equal('Foo', 'Foo');
   t.end();
 });
