@@ -6,6 +6,7 @@
 const express = require('express'),
       path    = require('path'),
       hbs     = require('express-handlebars'),
+      helpers = require('../public/views/helpers'),
       app     = express();
 
 // VIEW ENGINE SETUP
@@ -19,6 +20,7 @@ app.engine('hbs', hbs({
   layoutsDir: path.join(__dirname, '../public/views/layouts'),
   defaultLayout: 'main',
   partialsDir: path.join(__dirname, '../public/views/partials'),
+  helpers: helpers
 }));
 
 // Configure the views path
