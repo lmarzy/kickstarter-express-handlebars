@@ -7,7 +7,19 @@ const express = require('express'),
       path    = require('path'),
       hbs     = require('express-handlebars'),
       helpers = require('../public/views/helpers'),
+      morgan  = require('morgan'),
       app     = express();
+
+
+// MORGAN (Logging)
+// ======================================================================
+
+app.use(morgan('dev'))
+
+// STATIC ASSETS
+// ======================================================================
+
+app.use(express.static(__dirname + '/public'));
 
 // VIEW ENGINE SETUP
 // ======================================================================
@@ -30,10 +42,5 @@ app.set('views', path.join(__dirname, '../public/views'));
 // ======================================================================
 
 app.use('/', require('./routes'));
-
-// STATIC ASSETS
-// ======================================================================
-
-app.use(express.static(__dirname + '/public'));
 
 module.exports = app;
