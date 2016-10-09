@@ -1,8 +1,12 @@
 // HOME Controller
 
-module.exports = function(req, res) {
-  const viewData = {
-    title: 'Home'
+module.exports = {
+
+  get(req, res) {
+    const viewData = {
+      title: 'Home'
+    }
+    res.render('index', viewData);
   }
-  res.render('index', viewData);
+
 };
