@@ -6,7 +6,7 @@
 const express = require('express'),
       path    = require('path'),
       hbs     = require('express-handlebars'),
-      helpers = require('../public/views/helpers'),
+      helpers = require('../public/views/helpers/example'),
       morgan  = require('morgan'),
       app     = express();
 
