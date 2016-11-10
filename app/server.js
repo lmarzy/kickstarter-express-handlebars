@@ -6,10 +6,9 @@
 const express = require('express'),
       path    = require('path'),
       hbs     = require('express-handlebars'),
-      helpers = require('../public/views/helpers/example'),
+      helpers = require('../public/views/helpers'),
       morgan  = require('morgan'),
       app     = express();
-
 
 // MORGAN (Logging)
 // ======================================================================
