@@ -1,10 +1,10 @@
-const path              = require('path'),
-      ExtractTextPlugin = require("extract-text-webpack-plugin"),
-      CopyWebpackPlugin = require('copy-webpack-plugin'),
-      autoprefixer      = require('autoprefixer'),
-      vr                = require('postcss-vr'),
-      focus             = require('postcss-focus'),
-      pxtorem           = require('postcss-pxtorem');
+const path               = require('path');
+const ExtractTextPlugin  = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin  = require('copy-webpack-plugin');
+const autoprefixer       = require('autoprefixer');
+const vr                 = require('postcss-vr');
+const focus              = require('postcss-focus');
+const pxtorem            = require('postcss-pxtorem');
 
 const PATHS = {
   assets: path.join(__dirname, 'public/assets'),
